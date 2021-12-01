@@ -11,7 +11,7 @@ describe('Day one sonar sweep', (): void => {
     expect(depthIncreaseCount).toBe(1316);
   });
 
-  it('Puzzle two -three measurement sliding window', (): void => {
+  it('Puzzle two - three measurement sliding window', (): void => {
     const windowDepthIncreaseCount = depthArray.filter((depth, i) => {
       const nextDepth = depthArray[i + 1];
       const twoDepthsLater = depthArray[i + 2];
