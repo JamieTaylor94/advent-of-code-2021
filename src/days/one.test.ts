@@ -1,27 +1,27 @@
-import { getTextFor } from '../resourceReader';
+import { getTextForDay } from '../resourceReader';
 
-const numbers = getTextFor('one').map(Number);
+const depthArray = getTextForDay('one').map(Number);
 
 describe('Day one sonar sweep', (): void => {
   it('Puzzle one - count number of times the depth increases', (): void => {
-    const result = numbers.filter((depth, i) => {
-      return numbers[i - 1] < depth ? 1 : 0;
-    });
+    const depthIncreaseCount = depthArray.filter((depth, i) => {
+      return depthArray[i - 1] < depth ? 1 : 0;
+    }).length;
 
-    expect(result.length).toBe(1316);
+    expect(depthIncreaseCount).toBe(1316);
   });
 
   it('Puzzle two -three measurement sliding window', (): void => {
-    const result = numbers.filter((depth, i) => {
-      const nextDepth = numbers[i + 1];
-      const twoDepthsLater = numbers[i + 2];
-      const threeDepthsLater = numbers[i + 3];
+    const windowDepthIncreaseCount = depthArray.filter((depth, i) => {
+      const nextDepth = depthArray[i + 1];
+      const twoDepthsLater = depthArray[i + 2];
+      const threeDepthsLater = depthArray[i + 3];
 
       const windowA = depth + nextDepth + twoDepthsLater;
       const windowb = nextDepth + twoDepthsLater + threeDepthsLater;
       return windowA < windowb ? 1 : 0;
-    });
+    }).length;
 
-    expect(result.length).toBe(1344);
+    expect(windowDepthIncreaseCount).toBe(1344);
   });
 });
