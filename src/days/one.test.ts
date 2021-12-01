@@ -18,8 +18,8 @@ describe('Day one sonar sweep', (): void => {
       const threeDepthsLater = depthArray[i + 3];
 
       const windowA = depth + nextDepth + twoDepthsLater;
-      const windowb = nextDepth + twoDepthsLater + threeDepthsLater;
-      return windowA < windowb ? 1 : 0;
+      const windowB = nextDepth + twoDepthsLater + threeDepthsLater;
+      return windowA < windowB ? 1 : 0;
     }).length;
 
     expect(windowDepthIncreaseCount).toBe(1344);
