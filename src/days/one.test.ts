@@ -13,21 +13,8 @@ describe('Day one sonar sweep', (): void => {
     expect(totalDepthIncrements).toBe(1316);
   });
 
-<<<<<<< HEAD
   it('Puzzle two - three measurement sliding window', (): void => {
-    const windowDepthIncreaseCount = depthArray.filter((depth, i) => {
-      const nextDepth = depthArray[i + 1];
-      const twoDepthsLater = depthArray[i + 2];
-      const threeDepthsLater = depthArray[i + 3];
-
-      const windowA = depth + nextDepth + twoDepthsLater;
-      const windowB = nextDepth + twoDepthsLater + threeDepthsLater;
-      return windowA < windowB ? 1 : 0;
-    }).length;
-=======
-  it('Puzzle two -three measurement sliding window', (): void => {
-    const totalDepthIncrements = measurements.filter(
-      (currentDepth, i) => {
+    const totalDepthIncrements = measurements.filter((currentDepth, i) => {
         const nextDepth = measurements[i + 1];
         const twoDepthsLater = measurements[i + 2];
         const threeDepthsLater = measurements[i + 3];
@@ -39,7 +26,6 @@ describe('Day one sonar sweep', (): void => {
         return depthHasIncreased;
       }
     ).length;
->>>>>>> e39f7eb (Minor refactor of day one to become slightly more readable)
 
     expect(totalDepthIncrements).toBe(1344);
   });
