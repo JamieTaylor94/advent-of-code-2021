@@ -2,6 +2,12 @@ import { getTextForDay } from '../resourceReader';
 
 const course = getTextForDay('two');
 
+enum Direction {
+  up = 'up',
+  down = 'down',
+  forward = 'forward'
+}
+
 describe('Day two - Dive!', (): void => {
   it('Part One ', (): void => {
     let horizontalPostion = 0;
@@ -11,11 +17,11 @@ describe('Day two - Dive!', (): void => {
       const command = parseLine(line);
       const { direction, placesToMove } = command;
 
-      if (direction === 'down') {
+      if (direction === Direction.down) {
         depth += placesToMove;
-      } else if (direction === 'up') {
+      } else if (direction === Direction.up) {
         depth -= placesToMove;
-      } else if (direction === 'forward') {
+      } else if (direction === Direction.forward) {
         horizontalPostion += placesToMove;
       }
     });
@@ -32,11 +38,11 @@ describe('Day two - Dive!', (): void => {
       const command = parseLine(line);
       const { direction, placesToMove } = command;
 
-      if (direction === 'down') {
+      if (direction === Direction.down) {
         aim += placesToMove;
-      } else if (direction === 'up') {
+      } else if (direction === Direction.up) {
         aim -= placesToMove;
-      } else if (direction === 'forward') {
+      } else if (direction === Direction.forward) {
         horizontalPostion += placesToMove;
         depth += aim * placesToMove;
       }
@@ -46,7 +52,7 @@ describe('Day two - Dive!', (): void => {
   });
 });
 
-const parseLine = (line: string) : Command => {
+const parseLine = (line: string): Command => {
   const parts = line.split(' ');
 
   return {
