@@ -46,7 +46,7 @@ describe('Day two - Dive!', (): void => {
   });
 });
 
-const parseLine = (line: string) => {
+const parseLine = (line: string) : Command => {
   const parts = line.split(' ');
 
   return {
