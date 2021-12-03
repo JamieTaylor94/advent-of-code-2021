@@ -1,4 +1,3 @@
-import { parse } from '@babel/core';
 import { getTextForDay } from '../resourceReader';
 
 const report = getTextForDay('three');
