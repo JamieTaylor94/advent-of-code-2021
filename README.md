@@ -1,3 +1,5 @@
 # advent-of-code-2021
 
-Struggled with time due to new child
+This year was tough to get through because my daughter was 4 weeks old.
+
+I decided to do this in TypeScript as I have accepted a position at Moonpig that was 100% TypeScript.
